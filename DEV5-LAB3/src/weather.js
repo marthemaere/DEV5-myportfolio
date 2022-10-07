@@ -64,9 +64,12 @@ export default class Weather{
             else if(weather.toLowerCase().includes("rainy")){
             this.getWooper();
             document.querySelector(".wooper").classList.remove("hidden");}
-            else if(weather.toLowerCase().includes("snowy")){
+            else if(weather.toLowerCase().includes("snow")){
             this.getCubchoo();
             document.querySelector(".cubchoo").classList.remove("hidden");}
+            else if (weather.toLowerCase().includes("clear")){
+            this.getSnorlax();
+            document.querySelector(".snorlax").classList.remove("hidden");}
 
     };
 
@@ -109,6 +112,16 @@ export default class Weather{
             console.log(data.name);
         });
     }
+
+    getSnorlax() {
+        const URL =`https://pokeapi.co/api/v2/pokemon/snorlax`;
+        fetch(URL)
+        .then(response => response.json())
+        .then(data => {
+            this.displayPokemon(data);
+            console.log(data.name);
+        });
+    }    
 
      displayPokemon(data){
          let name = data.name;

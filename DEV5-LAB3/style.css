@@ -36,3 +36,8 @@ img{
 .hidden{
   display: none;
 }
+
+.pokemon__name{
+  font-size: 2rem;
+  text-transform: uppercase;
+}
