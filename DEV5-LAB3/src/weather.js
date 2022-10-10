@@ -70,6 +70,9 @@ export default class Weather{
             else if (weather.toLowerCase().includes("clear")){
             this.getSnorlax();
             document.querySelector(".snorlax").classList.remove("hidden");}
+            else{ this.getDito();
+            document.querySelector(".dito").classList.remove("hidden");
+            }
 
     };
 
@@ -121,7 +124,17 @@ export default class Weather{
             this.displayPokemon(data);
             console.log(data.name);
         });
-    }    
+    }   
+    
+    getDito(){
+        const url =`https://pokeapi.co/api/v2/pokemon/ditto`;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            this.displayPokemon(data);
+            console.log(data.name);
+        });
+    }
 
      displayPokemon(data){
          let name = data.name;
