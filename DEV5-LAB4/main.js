@@ -1,5 +1,6 @@
 import './style.css'
 import House from './house.js'
+import Background from './background';
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
@@ -23,7 +24,8 @@ const scene = new THREE.Scene();
 
       const house = new House();
       scene.add(house.group);
-
+      const background = new Background();
+      scene.add(background.group);
 
 			function animate() {
 				requestAnimationFrame( animate );
