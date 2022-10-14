@@ -1,0 +1,11 @@
+Model Information:
+* title:	Witch Apprentice
+* source:	https://sketchfab.com/3d-models/witch-apprentice-6c633b9f364d4e0ab61cb74289affd44
+* author:	Sharon Kunne (https://sketchfab.com/sharonkunne)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Witch Apprentice" (https://sketchfab.com/3d-models/witch-apprentice-6c633b9f364d4e0ab61cb74289affd44) by Sharon Kunne (https://sketchfab.com/sharonkunne) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

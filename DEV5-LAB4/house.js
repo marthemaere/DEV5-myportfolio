@@ -5,11 +5,10 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 export default class House {
     constructor() {
         this.group = new THREE.Group();
-        this.createHouse();  
+        this.createHouse();
     }
 
     createHouse() {
-        
             //wall1
             const geometry = new THREE.PlaneGeometry(1, 1, 1);
             const material = new THREE.MeshBasicMaterial({ color: 0x6c4675 });
@@ -97,6 +96,15 @@ export default class House {
             cone.rotation.y = 0.75;
             this.group.add(cone);
         
+            //add card
+            const geometry10 = new THREE.PlaneGeometry(0.5, 0.5, 1);
+            const material10 = new THREE.MeshBasicMaterial({ color: 0xffffff });
+            const plane10 = new THREE.Mesh(geometry10, material10);
+            plane10.position.y = 2;
+            plane10.rotation.x = 0.6;
+            plane10.position.z = -0.4;
+            plane10.material.side = THREE.DoubleSide;
+            this.group.add(plane10);
     }
     animate() {
         requestAnimationFrame( this.animate );

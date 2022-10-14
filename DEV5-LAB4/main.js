@@ -1,6 +1,7 @@
 import './style.css'
 import House from './house.js'
 import Background from './background';
+import Assets from './assets';
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
@@ -14,8 +15,16 @@ const scene = new THREE.Scene();
 			document.body.appendChild( renderer.domElement );
       //light
       const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-      directionalLight.position.set( 3, 3, 1 );
+      directionalLight.position.set( 4, 3, 6 );
       scene.add( directionalLight );
+
+      const ambientLight = new THREE.AmbientLight( 0xffffff, 0.5 );
+      scene.add( ambientLight );
+
+      //add ambientlight helper
+      const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 0.2);
+      scene.add(directionalLightHelper);
+
 
 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -26,6 +35,8 @@ const scene = new THREE.Scene();
       scene.add(house.group);
       const background = new Background();
       scene.add(background.group);
+      const assets = new Assets();
+      scene.add(assets.group);
 
 			function animate() {
 				requestAnimationFrame( animate );
