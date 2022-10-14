@@ -97,14 +97,25 @@ export default class House {
             this.group.add(cone);
         
             //add card
-            const geometry10 = new THREE.PlaneGeometry(0.5, 0.5, 1);
+            const geometry10 = new THREE.PlaneGeometry(0.5, 0.1, 1);
+            const textureLoader2 = new THREE.TextureLoader();
+            const cardTexture = textureLoader2.load('/Images/name.png');
             const material10 = new THREE.MeshBasicMaterial({ color: 0xffffff });
+            material10.map = cardTexture;
+            material10.side = THREE.DoubleSide;
             const plane10 = new THREE.Mesh(geometry10, material10);
-            plane10.position.y = 2;
-            plane10.rotation.x = 0.6;
-            plane10.position.z = -0.4;
+            plane10.position.z = 1;
             plane10.material.side = THREE.DoubleSide;
             this.group.add(plane10);
+
+            //add pole
+            const geometry11 = new THREE.CylinderGeometry(0.01, 0.01, 0.5, 15);
+            const material11 = new THREE.MeshBasicMaterial({ color: 0x000000 });
+            const cylinder = new THREE.Mesh(geometry11, material11);
+            cylinder.position.z = 1;
+            cylinder.position.y = -0.25;
+            
+            this.group.add(cylinder);
     }
     animate() {
         requestAnimationFrame( this.animate );

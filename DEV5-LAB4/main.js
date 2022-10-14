@@ -38,12 +38,12 @@ const scene = new THREE.Scene();
 			function animate() {
 				requestAnimationFrame( animate );
 
-        camera.position.z -= 0.01;
-        camera.position.y -= 0.001;
-        //camera stop at 0
-        if (camera.position.z < 1) {
-          camera.position.z = 1;
-        }
+        // camera.position.z -= 0.01;
+        // camera.position.y -= 0.001;
+        // //camera stop at 0
+        // if (camera.position.z < 1) {
+        //   camera.position.z = 1;
+        // }
 				renderer.render( scene, camera );
 			};
 
