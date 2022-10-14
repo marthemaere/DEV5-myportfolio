@@ -21,10 +21,6 @@ const scene = new THREE.Scene();
       const ambientLight = new THREE.AmbientLight( 0xffffff, 0.5 );
       scene.add( ambientLight );
 
-      //add ambientlight helper
-      const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 0.2);
-      scene.add(directionalLightHelper);
-
 
 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -42,7 +38,12 @@ const scene = new THREE.Scene();
 			function animate() {
 				requestAnimationFrame( animate );
 
-        camera.position.y += 0.001;
+        camera.position.z -= 0.01;
+        camera.position.y -= 0.001;
+        //camera stop at 0
+        if (camera.position.z < 1) {
+          camera.position.z = 1;
+        }
 				renderer.render( scene, camera );
 			};
 
