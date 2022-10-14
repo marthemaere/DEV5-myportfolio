@@ -38,8 +38,11 @@ const scene = new THREE.Scene();
       const assets = new Assets();
       scene.add(assets.group);
 
+
 			function animate() {
 				requestAnimationFrame( animate );
+
+        camera.position.y += 0.001;
 				renderer.render( scene, camera );
 			};
 

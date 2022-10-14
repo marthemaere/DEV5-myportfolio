@@ -12,17 +12,20 @@ export default class Assets{
         let pumpkin;
         let witch;
         let mushroom;
+        let cauldron;
+
+
         const gltfloader = new GLTFLoader();
-        gltfloader.load('/assets/Skull/scene.gltf', (gltf) => {
-            skull = gltf.scene;
-            skull.position.set(0, 0.5, 0);
-            skull.scale.set(0.01, 0.01, 0.01);
-            this.group.add(skull);
-        });
+            gltfloader.load('/assets/Skull/scene.gltf', (gltf) => {
+                skull = gltf.scene;
+                skull.position.set(0, 0.55, 0);
+                skull.scale.set(0.01, 0.01, 0.01);
+                this.group.add(skull);
+            });
 
         const addMushroom =(x,z) => {
         const gltfloader3 = new GLTFLoader();
-            gltfloader.load('/assets/Mushroom/scene.gltf', (gltf) => {  
+            gltfloader3.load('/assets/Mushroom/scene.gltf', (gltf) => {  
                 mushroom = gltf.scene;
                 mushroom.position.set(x, -0.5, z);
                 mushroom.scale.set(0.005, 0.005, 0.005);
@@ -65,9 +68,13 @@ export default class Assets{
             this.group.add(witch);
         });
 
-        
-
-
+        const gltfloader4 = new GLTFLoader();
+        gltfloader4.load('/assets/Cauldron/scene.gltf', (gltf) => {
+            cauldron = gltf.scene;
+            cauldron.position.set(0, -0.4, 0.3);
+            cauldron.scale.set(0.002, 0.002, 0.002);
+            this.group.add(cauldron);
+        });
 
     }
     

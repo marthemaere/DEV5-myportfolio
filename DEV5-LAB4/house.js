@@ -44,7 +44,7 @@ export default class House {
             const geometry4 = new THREE.PlaneGeometry(0.5, 0.5, 1);
             const material4 = new THREE.MeshBasicMaterial({ color: 0x000000 });
             const plane4 = new THREE.Mesh(geometry4, material4);
-            plane4.position.z = -0.5;
+            plane4.position.z = -0.4;
             plane4.material.side = THREE.DoubleSide;
             this.group.add(plane4);
         
@@ -83,7 +83,7 @@ export default class House {
             const plane8 = new THREE.Mesh(geometry8, material8);
             plane8.rotation.y = -Math.PI / 2;
             plane8.position.y = 1;
-            plane8.position.x = 0.5;
+            plane8.position.x = 0.4;
             plane8.material.side = THREE.DoubleSide;
             this.group.add(plane8);
         
