@@ -11,13 +11,33 @@ export default class Assets{
         let skull;
         let pumpkin;
         let witch;
+        let mushroom;
         const gltfloader = new GLTFLoader();
         gltfloader.load('/assets/Skull/scene.gltf', (gltf) => {
             skull = gltf.scene;
-            skull.position.set(2, 1, 2);
+            skull.position.set(0, 0.5, 0);
             skull.scale.set(0.01, 0.01, 0.01);
             this.group.add(skull);
         });
+
+        const addMushroom =(x,z) => {
+        const gltfloader3 = new GLTFLoader();
+            gltfloader.load('/assets/Mushroom/scene.gltf', (gltf) => {  
+                mushroom = gltf.scene;
+                mushroom.position.set(x, -0.5, z);
+                mushroom.scale.set(0.005, 0.005, 0.005);
+                this.group.add(mushroom);
+            });
+        }
+
+        for (let i = 0; i < 20; i++) {
+            let sign = Math.random() < 0.5 ? -1 : 1;
+            let x = Math.random() * 10 * sign;
+            sign = Math.random() < 0.5 ? -1 : 1;
+            let z = Math.random() * 10 * sign;
+            addMushroom(x,z);
+        }
+
 
         const addPumpkin = (x, z) => {
         const gltfloader2 = new GLTFLoader();
@@ -45,9 +65,10 @@ export default class Assets{
             this.group.add(witch);
         });
 
-
+        
 
 
 
     }
+    
 }

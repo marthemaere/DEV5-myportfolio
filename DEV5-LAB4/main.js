@@ -40,7 +40,6 @@ const scene = new THREE.Scene();
 
 			function animate() {
 				requestAnimationFrame( animate );
-
 				renderer.render( scene, camera );
 			};
 
